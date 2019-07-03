@@ -25,14 +25,28 @@
                 {{--<li><a href="chat-index.html"><span class="lbl">Select User</span></a></li>--}}
             </ul>
         </li>
-        <li class="blue with-sub {{areActiveRoutes(['admin.news','admin.newsSave'])}}">
+        <li class="blue with-sub {{areActiveRoutes(['admin.news','admin.newsSave','admin.contacts','admin.contactsSave'])}}">
 	            <span>
-	                <i class="font-icon font-icon font-icon-post {{areActiveRoutes(['admin.news','admin.newsSave'])}}"></i>
+	                <i class="font-icon font-icon font-icon-post {{areActiveRoutes(['admin.news','admin.newsSave','admin.contacts','admin.contactsSave'])}}"></i>
 	                <span class="lbl">Media Center</span>
 	            </span>
             <ul>
-                <li class="{{isActiveRoute('admin.news')}}">
+                <li class="{{areActiveRoutes(['admin.news','admin.newsSave'])}}">
                     <a href="{{route('admin.news')}}"><span class="lbl">News</span></a>
+                </li>
+                <li class="{{areActiveRoutes(['admin.contacts','admin.contactsSave'])}}">
+                    <a href="{{route('admin.contacts')}}"><span class="lbl">Contacts</span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="blue with-sub {{areActiveRoutes(['admin.team'])}}">
+	            <span>
+	                <i class="font-icon font-icon font-icon-post {{areActiveRoutes(['admin.team'])}}"></i>
+	                <span class="lbl">Football</span>
+	            </span>
+            <ul>
+                <li class="{{areActiveRoutes(['admin.team'])}}">
+                    <a href="{{route('admin.team')}}"><span class="lbl">Team</span></a>
                 </li>
             </ul>
         </li>

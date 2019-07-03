@@ -20,6 +20,34 @@
         $(function() {
             $('#example').DataTable();
         });
+
+        $('.delete_confirmation').click(function(e) {
+            e.preventDefault(); // Prevent the href from redirecting directly
+            var linkURL = $(this).attr("href");
+            warnBeforeRedirect(linkURL);
+        });
+
+        function warnBeforeRedirect(linkURL) {
+            console.log(linkURL+'fgd');
+            swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                },
+                function(){
+                    swal({
+                        title: "Deleted!",
+                        text: "'Your file has been deleted.",
+                        type: "success",
+                        confirmButtonClass: "btn-success"
+                    });
+                    window.location=linkURL;
+                });
+        }
     </script>
 @endpush
 @section('body')
@@ -116,7 +144,7 @@
                             <td>{{$new->date}}</td>
                             <td>{!! $new->status?'<span class="label label-success">Published</span>':'<span class="label label-danger">Unpublished</span>' !!}</td>
                             <td>
-                                <a class="btn btn-inline btn-primary-outline"><i class="fa fa-trash text-primary"></i></a>
+                                <a class="btn btn-inline btn-primary-outline delete_confirmation" data-id="{{$new->id}}" href="{{route('admin.newsDelete',$new->id)}}"><i class="fa fa-trash text-primary"></i></a>
                             </td>
                         </tr>
                     @endforeach

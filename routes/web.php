@@ -28,6 +28,13 @@ Route::post('home/about/save','HomePage@aboutSave')->name('admin.aboutSave');
 
 Route::get('news','MediaController@news')->name('admin.news');
 Route::post('news/save','MediaController@newsSave')->name('admin.newsSave');
+Route::get('news/delete/{id}','MediaController@newsDelete')->name('admin.newsDelete');
+Route::get('contacts','MediaController@contacts')->name('admin.contacts');
+Route::post('contacts/save','MediaController@contactsSave')->name('admin.contactsSave');
+Route::get('contacts/delete/{id}','MediaController@contactsDelete')->name('admin.contactsDelete');
+
+Route::get('team','FootballController@team')->name('admin.team');
+Route::post('teamSave','FootballController@teamSave')->name('admin.teamSave');
 
 Auth::routes();
 

@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="/build/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/build/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/build/css/main.css">
+
+    <link rel="stylesheet" href="/build/css/lib/bootstrap-sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="/build/css/separate/vendor/sweet-alert-animations.min.css">
     @stack('style')
 
 </head>
@@ -77,7 +80,7 @@
 <script type="text/javascript" src="/build/js/lib/jqueryui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/build/js/lib/lobipanel/lobipanel.min.js"></script>
 <script type="text/javascript" src="/build/js/lib/match-height/jquery.matchHeight.min.js"></script>
-
+<script src="/build/js/lib/bootstrap-sweetalert/sweetalert.min.js"></script>
 <script>
     $(document).ready(function() {
     });
