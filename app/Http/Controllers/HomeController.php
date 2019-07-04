@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FootballPage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('site.index');
+    }
+
+    public function football_rewards()
+    {
+        $rewards = FootballPage::where('id',1)->first();
+        return view('site.football-rewards',compact('rewards'));
     }
 }

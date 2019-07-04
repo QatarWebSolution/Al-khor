@@ -1,9 +1,9 @@
 <nav class="side-menu">
     <ul class="side-menu-list">
-        <li class="grey">
+        <li class="grey {{isActiveRoute('admin.dashboard')}}">
 	            <span>
-	                <i class="font-icon font-icon-dashboard"></i>
-	                <span class="lbl">Dashboard</span>
+	                <i class="font-icon font-icon-dashboard {{areActiveRoutes(['admin.dashboard'])}}"></i>
+                    <span class="lbl"><a href="{{route('admin.dashboard')}}">Dashboard</a></span>
 	            </span>
         </li>
 
@@ -39,14 +39,23 @@
                 </li>
             </ul>
         </li>
-        <li class="blue with-sub {{areActiveRoutes(['admin.team'])}}">
+        <li class="blue with-sub {{areActiveRoutes(['admin.team','admin.teamSave','admin.football_rewards','admin.football_rewardsSave','admin.football_fixturesSave','admin.football_fixtures','admin.football_fanclub','admin.football_fanclubSave'])}}">
 	            <span>
-	                <i class="font-icon font-icon font-icon-post {{areActiveRoutes(['admin.team'])}}"></i>
+	                <i class="font-icon font-icon font-icon-post {{areActiveRoutes(['admin.team','admin.teamSave','admin.football_rewards','admin.football_rewardsSave','admin.football_fixturesSave','admin.football_fixtures','admin.football_fanclub','admin.football_fanclubSave'])}}"></i>
 	                <span class="lbl">Football</span>
 	            </span>
             <ul>
-                <li class="{{areActiveRoutes(['admin.team'])}}">
+                <li class="{{areActiveRoutes(['admin.team','admin.teamSave'])}}">
                     <a href="{{route('admin.team')}}"><span class="lbl">Team</span></a>
+                </li>
+                <li class="{{areActiveRoutes(['admin.football_fixturesSave','admin.football_fixtures'])}}">
+                    <a href="{{route('admin.football_fixtures')}}"><span class="lbl">Football Fixtures</span></a>
+                </li>
+                <li class="{{areActiveRoutes(['admin.football_rewards','admin.football_rewardsSave'])}}">
+                    <a href="{{route('admin.football_rewards')}}"><span class="lbl">Football Rewards</span></a>
+                </li>
+                <li class="{{areActiveRoutes(['admin.football_fanclubSave','admin.football_fanclub'])}}">
+                    <a href="{{route('admin.football_fanclub')}}"><span class="lbl">Football Fanclub</span></a>
                 </li>
             </ul>
         </li>

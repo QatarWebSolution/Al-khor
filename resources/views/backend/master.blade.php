@@ -59,6 +59,31 @@
         <button class="hamburger hamburger--htla">
             <span>toggle menu</span>
         </button>
+        <div class="site-header-content">
+            <div class="site-header-content-in">
+                <div class="site-header-shown">
+                    <div class="dropdown user-menu">
+                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Auth::user()->name}}
+                            <img src="/build/img/avatar-2-64.png" alt="">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+                            {{--<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>--}}
+                            {{--<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>--}}
+                            {{--<a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-question-sign"></span>Help</a>--}}
+                            {{--<div class="dropdown-divider"></div>--}}
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div><!--.container-fluid-->
 </header><!--.site-header-->
 

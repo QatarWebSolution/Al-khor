@@ -149,9 +149,9 @@
                                             <li class="{{isActiveRouteSite('football-team')}}"><a href="{{route('football-team')}}">Team</a></li>
                                             <li><a href="football-ticket-service.php">Ticket service</a></li>
                                             <li><a href="football-standings-and-statistics.php">Standings and statistics</a></li>
-                                            <li><a href="football-fanclub.php">Fan Club</a></li>
-                                            <li><a href="football-fixtures.php">Fixtures</a></li>
-                                            <li><a href="football-rewards.php">Football rewards</a></li>
+                                            <li class="{{isActiveRouteSite('football-fanclub')}}"><a href="{{route('football-fanclub')}}">Fan Club</a></li>
+                                            <li class="{{isActiveRouteSite('football-fixtures')}}"><a href="{{route('football-fixtures')}}">Fixtures</a></li>
+                                            <li class="{{isActiveRouteSite('football-rewards')}}"><a href="{{route('football-rewards')}}">Football rewards</a></li>
                                             <li><a href="#">Watch Live</a></li>
                                         </ul>
                                     </div>
